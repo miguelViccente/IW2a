@@ -64,15 +64,52 @@
         Piscando o botão
     </button>
 
+    <button onclick="GerarCartela()">
+        Gerar Cartela
+    </button>
+
     <script>
+        function GerarCartela(){
+            vetorB = GerarVetor(1,15)
+            vetorI = GerarVetor(16,30)
+            vetorN = GerarVetor(31,45)
+            vetorG = GerarVetor(46,60)
+            vetorO = GerarVetor(61,75)
+        for (var i = 0; i <5; i++)
+        {
+        var td = document.getElementById("b"+(i+1))
+        td.innerText = vetorB[i]
+
+        var td = document.getElementById("i"+(i+1))
+        td.innerText = vetorI[i]
+
+        var td = document.getElementById("n"+(i+1))
+        td.innerText = vetorN[i]
+
+        var td = document.getElementById("g"+(i+1))
+        td.innerText = vetorG[i]
+
+        var td = document.getElementById("o"+(i+1))
+        td.innerText = vetorO[i]
+        }
+
+        }
+
+        function GerarVetor(numeroInicial, numeroFinal){
+            vetor = []
+            for (i = numeroInicial; i <= numeroFinal; i++){
+                vetor.push(i)
+            }
+            return vetor
+        }
         function Piscar()
         {
             var botao = document.getElementById("botao");
-            if(botao.style.backgroundColor == 'red')
+            if(botao.style.backgroundColor == 'white')
         {
-            botao.style.backgroundColor = 'blue';
+            botao.style.backgroundColor = 'yellow';
         } else{
-            botao.style.backgroundColor = 'red';
+            botao.style.backgroundColor = 'white';
         }
         }
         function MarcarCartela(td)
